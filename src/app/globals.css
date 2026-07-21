@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-mono: "JetBrains Mono", monospace;
+  }
+
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #1a3c2e #0a0f0d;
+  }
+
+  *::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #0a0f0d;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background: #1a3c2e;
+    border-radius: 3px;
+  }
+
+  *::-webkit-scrollbar-thumb:hover {
+    background: #2d5a3f;
+  }
+}
+
+@layer components {
+  .military-panel {
+    @apply bg-military-panel border border-military-border rounded-lg;
+  }
+
+  .military-input {
+    @apply bg-military-panel border border-military-accent rounded px-3 py-2 text-xs text-military-text placeholder-military-muted focus:outline-none focus:border-military-green transition-colors;
+  }
+
+  .military-btn {
+    @apply px-3 py-2 rounded text-xs font-medium transition-all duration-200 border;
+  }
+
+  .military-btn-primary {
+    @apply military-btn bg-military-accent border-military-accent text-military-green hover:bg-military-green hover:text-military-bg;
+  }
+
+  .military-btn-secondary {
+    @apply military-btn bg-military-panel border-military-border text-military-muted hover:border-military-green hover:text-military-text;
+  }
+
+  .text-glow {
+    text-shadow: 0 0 10px currentColor;
+  }
+}
+
+@layer utilities {
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+}
